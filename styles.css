@@ -1,0 +1,473 @@
+/* =========================================================================
+   Importação de Fontes
+   ========================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* =========================================================================
+   Reset e Variáveis Globais
+   ========================================================================= */
+:root {
+  /* Tema padrão – fundo escuro */
+  --cor-fundo: #000;
+  --cor-texto: #fff;
+  --cor-destaque: #ff4444;
+  --cor-destaque-rgb: 255, 68, 68;
+  --cor-borda: rgba(255, 255, 255, 0.3);
+  --cor-sombra: rgba(0, 0, 0, 0.5);
+  --cor-texto-rgb: 255, 255, 255;
+  --cor-botao-texto: #fff;
+}
+
+.tema-doce {
+  --cor-fundo: #fffaf0;
+  --cor-texto: #333;
+  --cor-destaque: #f08;
+  --cor-destaque-rgb: 255, 0, 136;
+  --cor-borda: rgba(0, 0, 0, 0.1);
+  --cor-sombra: rgba(0, 0, 0, 0.1);
+  --cor-texto-rgb: 51, 51, 51;
+  --cor-botao-texto: #333;
+}
+
+.tema-claro {
+  --cor-fundo: #fff;
+  --cor-texto: #000;
+  --cor-destaque: #f08;
+  --cor-borda: rgba(0, 0, 0, 0.1);
+  --cor-botao-texto: #000;
+}
+
+/* =========================================================================
+   Reset CSS e Ajustes Gerais
+   ========================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: calc(16px + 0.5vw);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* =========================================================================
+   Estilos Globais e Tipografia
+   ========================================================================= */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.5s, color 0.5s;
+  touch-action: manipulation;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  text-shadow: 2px 2px 5px rgba(var(--cor-destaque-rgb), 0.5);
+}
+
+/* =========================================================================
+   Cabeçalho e Botão de Alternância de Tema
+   ========================================================================= */
+header {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+#temaButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--cor-botao-texto);
+}
+
+/* =========================================================================
+   Seção de Login
+   ========================================================================= */
+.login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.login-box {
+  background: var(--cor-fundo);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--cor-destaque);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border: 2px solid var(--cor-destaque);
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid var(--cor-destaque);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-box button {
+  padding: 10px 20px;
+  border: none;
+  background: var(--cor-destaque);
+  color: var(--cor-botao-texto);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-box button:hover {
+  background: darkred;
+}
+
+/* =========================================================================
+   Seção de Poesias
+   ========================================================================= */
+.poesia-container {
+  background: rgba(var(--cor-texto-rgb), 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  width: 90%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+  border: 1px solid;
+  animation: borderColorChange 3s infinite linear;
+}
+
+.poesia-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.poesia-box {
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+
+.poesia-box button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--cor-destaque);
+  color: var(--cor-botao-texto);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.poesia-box button:hover {
+  background: darkred;
+}
+
+/* =========================================================================
+   Bordas Animadas Internas
+   ========================================================================= */
+.borda-animada {
+  height: 4px;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400%;
+  margin: 1rem 0;
+  border-radius: 2px;
+  animation: bordaAnimada 5s linear infinite;
+  -webkit-animation: bordaAnimada 5s linear infinite;
+}
+
+@keyframes bordaAnimada {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+@-webkit-keyframes bordaAnimada {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+/* =========================================================================
+   Animação de Mudança de Cor da Borda
+   (usada em login e poesia)
+   ========================================================================= */
+@keyframes borderColorChange {
+  0%   { border-color: #4A90E2; }
+  25%  { border-color: #8A2BE2; }
+  50%  { border-color: #9013FE; }
+  75%  { border-color: #4169E1; }
+  100% { border-color: #4A90E2; }
+}
+
+/* =========================================================================
+   Seção de Simbolismos
+   ========================================================================= */
+.simbolismos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.simbolo {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(var(--cor-texto-rgb), 0.05);
+  transition: transform 0.3s ease;
+}
+
+.simbolo:hover {
+  transform: translateY(-5px);
+}
+
+.icone {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+/* =========================================================================
+   Mensagens Secretas
+   ========================================================================= */
+.segredo {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 600px;
+  text-align: center;
+  border: 2px dashed var(--cor-destaque);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.mensagem {
+  opacity: 0;
+  height: 0;
+  transition: all 0.3s ease;
+}
+
+.segredo.revelado .mensagem {
+  opacity: 1;
+  height: auto;
+  margin-top: 1rem;
+}
+
+/* =========================================================================
+   Nuvem de Palavras
+   ========================================================================= */
+.nuvem-palavras {
+  position: relative;
+  height: 400px;
+  margin: 4rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.palavra {
+  position: absolute;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: rgba(var(--cor-destaque-rgb), 0.1);
+  animation: flutuar 10s infinite linear;
+  -webkit-animation: flutuar 10s infinite linear;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.palavra:hover {
+  background: rgba(var(--cor-destaque-rgb), 0.2);
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, 30px); }
+  50% { transform: translate(-15px, 20px); }
+  75% { transform: translate(5px, -10px); }
+}
+
+@-webkit-keyframes flutuar {
+  0%, 100% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
+  25% { -webkit-transform: translate(10px, 30px); transform: translate(10px, 30px); }
+  50% { -webkit-transform: translate(-15px, 20px); transform: translate(-15px, 20px); }
+  75% { -webkit-transform: translate(5px, -10px); transform: translate(5px, -10px); }
+}
+
+/* =========================================================================
+   Animação de Fade-In para Textos
+   ========================================================================= */
+/* Atualizado para garantir que os parágrafos com a classe .texto apareçam,
+   com uma fonte elegante (Playfair Display) e finalizem com opacidade 1 */
+.texto {
+  animation: fadeInText 1s ease-in-out forwards;
+  -webkit-animation: fadeInText 1s ease-in-out forwards;
+  font-family: 'Playfair Display', serif;
+  color: var(--cor-texto) !important;
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadeInText {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* =========================================================================
+   Animação para Efeito de Vibração (usada no login para erro)
+   ========================================================================= */
+@keyframes vibrar {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-5px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@-webkit-keyframes vibrar {
+  0%   { -webkit-transform: translateX(0); transform: translateX(0); }
+  25%  { -webkit-transform: translateX(-5px); transform: translateX(-5px); }
+  50%  { -webkit-transform: translateX(5px); transform: translateX(5px); }
+  75%  { -webkit-transform: translateX(-5px); transform: translateX(-5px); }
+  100% { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+
+/* =========================================================================
+   Botão de "Voltar ao Topo"
+   ========================================================================= */
+#btnTopo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--cor-destaque);
+  color: var(--cor-botao-texto);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 0 10px var(--cor-destaque);
+  transition: background 0.3s;
+}
+
+#btnTopo:hover {
+  background: darkred;
+}
+
+/* =========================================================================
+   Seção de Comentários
+   ========================================================================= */
+.comentarios {
+  margin-top: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comentarios textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 5px;
+}
+
+.comentarios button {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: var(--cor-destaque);
+  border: none;
+  color: var(--cor-botao-texto);
+  cursor: pointer;
+}
+
+.comentarios ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.comentarios ul li {
+  padding: 10px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* =========================================================================
+   Responsividade
+   ========================================================================= */
+@media (max-width: 768px) {
+  .poesia-container {
+    padding: 1rem;
+  }
+  
+  .simbolismos {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+  
+  .nuvem-palavras {
+    height: 300px;
+  }
+}
+/*IOS*/
+
+/* Melhora a renderização de fontes no Safari */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Scroll suave para iOS */
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Previne zoom em inputs no iOS */
+input, textarea {
+  font-size: 16px; /* Tamanho mínimo para evitar zoom automático */
+}
+/* Remove o highlight azul ao tocar em links/buttons */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+/* CSS para o ajuste */
+body {
+  padding-top: var(--safe-area-inset-top, 0);
+}
+/* Aplica estilos específicos para dispositivos iOS */
+@supports (-webkit-touch-callout: none) {
+  body {
+    font-weight: 500; /* Ajusta peso da fonte para melhor legibilidade no Safari */
+  }
+}
+
+
+
+ #temaButton {
+  position: absolute;
+  z-index: 9999;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}

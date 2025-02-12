@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site de poesias românticas">
+  <meta name="theme-color" content="#317EFB">
+ <!-- Configurações de viewport para iOS e Android -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Modo "web app" para Safari (iOS) -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Cor da barra de status no Android -->
+<meta name="theme-color" content="#FF69B4">
+
+<!-- Cor da barra de status no iOS -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#FF69B4">
+<!-- Ícone para salvar no home screen (iOS) -->
+<link rel="apple-touch-icon" href="/caminho-para-icone.png" sizes="180x180">
+<!-- Pré-carrega fontes para evitar "flash de texto invisível" -->
+<link rel="preload" href="caminho-da-fonte.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Previne o auto-ajuste de números em telefones (iOS) -->
+<meta name="format-detection" content="telephone=no">
+ 
+ 
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Poesias do Coração</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Poesias para Você</h1>
+    <button id="temaButton" title="Mudar tema">🌙</button>
+  </header>
+
+  <!-- Painel de Login -->
+  <section class="login-container" id="loginContainer">
+    <div class="login-box">
+      <h2>Login</h2>
+      <input type="password" id="password" placeholder="Digite a senha">
+      <button onclick="login()">Confirmar</button>
+      <p id="loginMessage"></p>
+    </div>
+  </section>
+
+<!-- Conteúdo do Site -->
+<main id="siteContent">
+  <!-- Poesia 1 -->
+  <section class="poesia-container">
+    <div class="poesia-box">
+      <h2>Remédio Azul</h2>
+      <div class="borda-animada"></div>
+      <p class="texto">
+        O azul em diversos tons,<br>
+        alguns próximos ao céu,<br>
+        outro, a paz que você traz ao meu coração,<br>
+        faz-me amar cada vez mais<br>
+        cada menor detalhe em você.<br><br>
+
+        Você é meu sol feito para mim,<br>
+        aquece-me sem queimar,<br>
+        ilumina sem segar,<br>
+        guia-me sem envenenar,<br>
+        és meu remédio.<br><br>
+
+        Se um dia você sentir o que eu sinto,<br>
+        espero poder lhe apreciar,<br>
+        não com fotos em visualizações únicas,<br>
+        mas com toques de amor<br>
+        em sua pele macia,<br>
+        que chama meus beijos.
+      </p>
+      <button onclick="tocarAudio('audio1')">▶️ Ouvir</button>
+      <audio id="audio1" src="audio1.mp3"></audio>
+    </div>
+  </section>
+
+  <!-- Poesia 2 -->
+  <section class="poesia-container">
+    <div class="poesia-box">
+      <h2>Escuridão Vencida</h2>
+      <div class="borda-animada"></div>
+      <p class="texto">
+        O preto em suas unhas me lembra<br>
+        da escuridão que você baniu do meu coração.<br>
+        Você chegou, cheia de postura,<br>
+        com seu belo canto que iluminou<br>
+        e sua breve presença aqueceu<br>
+        o frio em meu coração.<br><br>
+
+        Você é o imaginável;<br>
+        pois, se eu fosse imaginar,<br>
+        diminuiria sua perfeição.<br>
+        Então, digo que és inalcançável.<br><br>
+
+        Pensando tanto em você,<br>
+        sempre me pego tentando te decifrar.<br>
+        Entre tantos pensamentos que vêm e vão,<br>
+        o que me resta é sempre o seu belo sorriso,<br>
+        que me faz perceber<br>
+        que és o amor da minha vida.
+      </p>
+      <button onclick="tocarAudio('audio2')">▶️ Ouvir</button>
+      <audio id="audio2" src="audio2.mp3"></audio>
+    </div>
+  </section>
+
+  <!-- Poesia 3 -->
+  <section class="poesia-container">
+    <div class="poesia-box">
+      <h2>Fios do Destino</h2>
+      <div class="borda-animada"></div>
+      <p class="texto">
+        Da sua franja, que se deixa levar pelo vento,<br>
+        ao meu coração, que foi roubado e deseja partir,<br>
+        à̶s̶ ̶s̶u̶a̶s̶ ̶m̶ã̶o̶s̶,̶<br>
+        buscando o toque de suas mãos,<br>
+        grandes o suficiente para entrelaçar meus dedos<br>
+        e delicadas, para guardar meus sentimentos.<br><br>
+
+        Dentre tantas palavras e admirações,<br>
+        me perco em suas andulações,<br>
+        nos fios dos seus cabelos, que por vezes se ondulam,<br>
+        nos seus lábios, que espero provar novamente,<br>
+        até as belas curvas do seu corpo singelo.<br><br>
+
+        Meu coração não fica preso em suas mãos,<br>
+        mas minha alma sim à sua,<br>
+        sendo como fios vermelhos do destino<br>
+        que prendem minha linda vida,<br>
+        a qual se chama você.
+      </p>
+      <button onclick="tocarAudio('audio3')">▶️ Ouvir</button>
+      <audio id="audio3" src="audio3.mp3"></audio>
+    </div>
+  </section>
+
+  <!-- Poesia 4 -->
+  <section class="poesia-container">
+    <div class="poesia-box">
+      <h2>Pedra Rara</h2>
+      <div class="borda-animada"></div>
+      <p class="texto">
+        Ao canto que me surpreendeu,<br>
+        das madrugadas que eram longas e tristes,<br>
+        agora trazidas por sorrisos e admirações por ti,<br>
+        da sua fofura em baixa estatura,<br>
+        aos seus grandes detalhes, marcados em seu corpo.<br><br>
+
+        Fico entrelaçado, não por prazeres momentâneos,<br>
+        mas pelo prazer de estar ao seu lado.<br>
+        Sinto que encontrei a pedra mais rara do mundo,<br>
+        e é essa pedra que quero guardar em meu coração,<br>
+        esperando que ela jamais se perca.<br><br>
+
+        Logo tento amarrá-la com fios avermelhados<br>
+        do meu coração amoroso e dilacerado,<br>
+        que guarda suas palavras como curativos,<br>
+        curando meu ser e revitalizando minha alma.
+      </p>
+      <button onclick="tocarAudio('audio4')">▶️ Ouvir</button>
+      <audio id="audio4" src="audio4.mp3"></audio>
+    </div>
+  </section>
+
+  <!-- Poesia 5 -->
+  <section class="poesia-container">
+    <div class="poesia-box">
+      <h2>Museu Vivo</h2>
+      <div class="borda-animada"></div>
+      <p class="texto">
+        Ao seu lado, sinto-me num museu de artes;<br>
+        a todos os lados, existem obras maravilhosas.<br>
+        Seja aquela exceção de um minuto,<br>
+        admirando você e exclamando sobre a vida,<br>
+        na qual sempre valerá a pena escutar<br>
+        cada palavra que sai dos seus belos lábios,<br>
+        que, entre suas pausas, sempre chama os meus.<br><br>
+
+        Como as nuvens no céu,<br>
+        bonitas do amanhecer ao entardecer,<br>
+        sempre presentes,<br>
+        não como os meus olhos amorosos,<br>
+        mas como uma obra de arte que navega pelo mundo,<br>
+        que nem todos são capazes de apreciar.<br><br>
+
+        Mas eu parei e apreciei;<br>
+        como um louco, me desesperarei.<br>
+        Logo, forjei minhas palavras na chama do amor,<br>
+        que emanou do meu coração por você,<br>
+        transformando-as em palavras da minha alma,<br>
+        para dizer que você está no meu coração.
+      </p>
+      <button onclick="tocarAudio('audio5')">▶️ Ouvir</button>
+      <audio id="audio5" src="audio5.mp3"></audio>
+    </div>
+  </section>
+
+  <!-- Poesia 6 -->
+  <section class="poesia-container">
+    <div class="poesia-box">
+      <h2>Fênix</h2>
+      <div class="borda-animada"></div>
+      <p class="texto">
+        Ao final das curtas madrugadas em que te admiro,<br>
+        traço em minha memória tuas belezas:<br>
+        teus sorrisos, lábios, cabelos, corpo,<br>
+        e tantos outros detalhes que nem um livro teria palavras para descrever.<br>
+        Por isso, apenas fecho meus pensamentos,<br>
+        desejando te pedir em namoro<br>
+        antes que outro alguém roube você.<br><br>
+
+        Não quero te restringir, pois, como a fênix,<br>
+        és uma chama pura que aquece sem ferir,<br>
+        cura apenas por brilhar,<br>
+        sendo todas as estações em apenas uma,<br>
+        tudo dentro do meu coração,<br>
+        que se alegra por te ter.<br><br>
+
+        Sei que não queres responsabilidade,<br>
+        a de respeitar todas as tuas opiniões,<br>
+        mas, como um grande egoísta,<br>
+        traço nas páginas da vida<br>
+        um "eu te amo."
+      </p>
+      <button onclick="tocarAudio('audio6')">▶️ Ouvir</button>
+      <audio id="audio6" src="audio6.mp3"></audio>
+    </div>
+  </section>
+</main>
+<script>
+   // Desativa o scroll ao carregar a página (quando o login está visível)
+  document.body.style.overflow = 'hidden';
+
+  // Função para verificar a senha e revelar o conteúdo do site
+  function login() {
+    var senhaInput = document.getElementById('password').value;
+    var mensagem = document.getElementById('loginMessage');
+    var senhaCorreta = "senha12345664311";
+    
+    if (senhaInput === senhaCorreta) {
+      // Oculta o painel de login
+      document.getElementById('loginContainer').style.display = 'none';
+      // Reativa o scroll da página
+      document.body.style.overflow = 'auto';
+      // Revela as poesias
+      document.querySelectorAll('.poesia-container').forEach(function(container) {
+        container.classList.add('show');
+      });
+    } else {
+      mensagem.textContent = "Senha incorreta. Tente novamente.";
+      document.querySelector('.login-box').style.animation = 'vibrar 0.3s';
+      setTimeout(function(){
+        document.querySelector('.login-box').style.animation = '';
+      }, 300);
+    }
+  }
+
+  
+  
+
+  // Função para tocar ou pausar o áudio de cada poesia
+  function tocarAudio(id) {
+    var audio = document.getElementById(id);
+    if (audio.paused) {
+      pararTodosAudios();
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+
+  // Pausa todos os áudios ativos
+  function pararTodosAudios() {
+    document.querySelectorAll('audio').forEach(function(audio) {
+      audio.pause();
+    });
+  }
+
+  // Alterna o tema (clique no botão superior direito)
+  document.getElementById('temaButton').addEventListener('click', function() {
+    document.body.classList.toggle('tema-doce');
+    // Altera o ícone do botão conforme o tema atual
+    if (document.body.classList.contains('tema-doce')) {
+      this.textContent = '☀️';
+    } else {
+      this.textContent = '🌙';
+    }
+  });
+
+  // Aplica padding para evitar sobreposição com a barra do Safari (iOS 15+)
+  if (CSS.supports("padding-top: env(safe-area-inset-top)")) {
+    document.documentElement.style.setProperty(
+      "--safe-area-inset-top", 
+      "env(safe-area-inset-top)"
+    );
+  }
+
+  // Código para permitir arrastar o botão
+  const button = document.getElementById('temaButton');
+
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  button.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    // Calcula o offset entre o cursor e o canto superior esquerdo do botão
+    offsetX = e.clientX - button.getBoundingClientRect().left;
+    offsetY = e.clientY - button.getBoundingClientRect().top;
+    button.style.cursor = 'grabbing'; // Altera o cursor durante o arrasto
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      // Move o botão para a posição do cursor, ajustando pelo offset
+      button.style.left = `${e.clientX - offsetX}px`;
+      button.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    button.style.cursor = 'pointer'; // Restaura o cursor padrão
+  });
+</script>
+</body>
+</html>
